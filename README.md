@@ -1,7 +1,8 @@
 # Projeto E-commerce
 
 
-[![GitHub issues](https://img.shields.io/github/issues/CaduGimenes/ecommercePHP7.svg)](https://github.com/CaduGimenes/ecommercePHP7/issues) [![GitHub forks](https://img.shields.io/github/forks/CaduGimenes/ecommercePHP7.svg)](https://github.com/CaduGimenes/ecommercePHP7/network)
+[![GitHub issues](https://img.shields.io/github/issues/CaduGimenes/ecommercePHP7.svg)](https://github.com/CaduGimenes/ecommercePHP7/issues) [![GitHub forks](https://img.shields.io/github/forks/CaduGimenes/ecommercePHP7.svg)](https://github.com/CaduGimenes/ecommercePHP7/network) [![GitHub license](https://img.shields.io/github/license/CaduGimenes/ecommercePHP7.svg)](https://github.com/CaduGimenes/ecommercePHP7/blob/master/LICENSE.MD)
+
 
 
 
