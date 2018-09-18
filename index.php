@@ -128,6 +128,7 @@ $app->post('/admin/users/create', function() {
 	$user->save();
 
 	header("Location: /admin/users");
+	exit;
 
 });
 
