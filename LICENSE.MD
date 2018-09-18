@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2018 Carlos Gimenes
+Copyright (c) 2018 Carlos Eduardo Gimenes Moura
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
