@@ -209,9 +209,9 @@ class Cart extends Model{
                 'nVlAltura'=>$totals['vlheight'],
                 'nVlLargura'=>$totals['vlwidth'],
                 'nVlDiametro'=>'0',
-                'sCdMaoPropria'=>'S',
+                'sCdMaoPropria'=>'N',
                 'nVlValorDeclarado'=>$totals['vlprice'],
-                'sCdAvisoRecebimento'=>'S'
+                'sCdAvisoRecebimento'=>'N'
             ]);
 
             $xml = simplexml_load_file("http://ws.correios.com.br/calculador/CalcPrecoPrazo.asmx/CalcPrecoPrazo?".$qs);
