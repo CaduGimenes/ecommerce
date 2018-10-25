@@ -188,7 +188,7 @@ class User extends Model{
 
     }
 
-    public static function getForgot($email)
+    public static function getForgot($email, $inadmin = true)
     {
 
         $sql = new Sql();
@@ -217,13 +217,23 @@ class User extends Model{
             {
                 throw new Exception("Não foi possível recuperar a senha");
                 
-            }else {
+            }else 
+            {
 
                 $dataRecovery = $results2[0];
 
                 $code = base64_encode(openssl_encrypt($dataRecovery["idrecovery"], "AES-128-ECB", User::SECRET));
 
-                $link = "http://www.hcodecommerce.com.br/admin/forgot/reset?code=$code";
+                if($inadmin === true) {
+
+                    $link = "http://www.hcodecommerce.com.br/admin/forgot/reset?code=$code";
+
+                } else {
+
+                    $link = "http://www.hcodecommerce.com.br/forgot/reset?code=$code";
+
+                }
+
 
                 $mailer = new Mailer($data["desemail"], $data["desperson"], "Redefinir senha Hcode Store", "forgot", array(
                     "name"=>$data["desperson"],
