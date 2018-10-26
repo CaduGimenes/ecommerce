@@ -1,479 +1,297 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>Airmail Ping</title>
-  <style type="text/css">
-
-  * {
-    margin:0;
-    padding:0;
-    font-family: Helvetica, Arial, sans-serif;
-  }
-
-  img {
-    max-width: 100%;
-    outline: none;
-    text-decoration: none;
-    -ms-interpolation-mode: bicubic;
-  }
-
-  .image-fix {
-    display:block;
-  }
-
-  .collapse {
-    margin:0;
-    padding:0;
-  }
-
-  body {
-    -webkit-font-smoothing:antialiased;
-    -webkit-text-size-adjust:none;
-    width: 100%!important;
-    height: 100%;
-    text-align: center;
-    color: #747474;
-    background-color: #ffffff;
-  }
-
-  h1,h2,h3,h4,h5,h6 {
-    font-family: Helvetica, Arial, sans-serif;
-    line-height: 1.1;
-  }
-
-  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-    font-size: 60%;
-    line-height: 0;
-    text-transform: none;
-  }
-
-  h1 {
-    font-weight:200;
-    font-size: 44px;
-  }
-
-  h2 {
-    font-weight:200;
-    font-size: 32px;
-    margin-bottom: 14px;
-  }
-
-  h3 {
-    font-weight:500;
-    font-size: 27px;
-  }
-
-  h4 {
-    font-weight:500;
-    font-size: 23px;
-  }
-
-  h5 {
-    font-weight:900;
-    font-size: 17px;
-  }
-
-  h6 {
-    font-weight:900;
-    font-size: 14px;
-    text-transform: uppercase;
-  }
-
-  .collapse {
-    margin:0!important;
-  }
-
-  td, div {
-    font-family: Helvetica, Arial, sans-serif;
-    text-align: center;
-  }
-
-  p, ul {
-    margin-bottom: 10px;
-    font-weight: normal;
-    font-size:14px;
-    line-height:1.6;
-  }
-
-  p.lead {
-    font-size:17px;
-  }
-
-  p.last {
-    margin-bottom:0px;
-  }
-
-  ul li {
-    margin-left:5px;
-    list-style-position: inside;
-  }
-
-  a {
-    color: #747474;
-    text-decoration: none;
-  }
-
-  a img {
-    border: none;
-  }
-
-  .head-wrap {
-    width: 100%;
-    margin: 0 auto;
-    background-color: #f9f8f8;
-    border-bottom: 1px solid #d8d8d8;
-  }
-
-  .head-wrap * {
-    margin: 0;
-    padding: 0;
-  }
-
-  .header-background {
-    background: repeat-x url(https://www.filepicker.io/api/file/wUGKTIOZTDqV2oJx5NCh) left bottom;
-  }
-
-  .header {
-    height: 42px;
-  }
-
-  .header .content {
-    padding: 0;
-  }
-
-  .header .brand {
-    font-size: 16px;
-    line-height: 42px;
-    font-weight: bold;
-  }
-
-  .header .brand a {
-    color: #464646;
-  }
-
-  .body-wrap {
-    width: 505px;
-    margin: 0 auto;
-    background-color: #ffffff;
-  }
-
-  .soapbox .soapbox-title {
-    font-size: 21px;
-    color: #464646;
-    padding-top: 35px;
-  }
-
-  .content .status-container.single .status-padding {
-    width: 80px;
-  }
-
-  .content .status {
-    width: 90%;
-  }
-
-  .content .status-container.single .status {
-    width: 300px;
-  }
-
-  .status {
-    border-collapse: collapse;
-    margin-left: 15px;
-    color: #656565;
-  }
-
-  .status .status-cell {
-    border: 1px solid #b3b3b3;
-    height: 50px;
-  }
-
-  .status .status-cell.success,
-  .status .status-cell.active {
-    height: 65px;
-  }
-
-  .status .status-cell.success {
-    background: #f2ffeb;
-    color: #51da42;
-  }
-
-  .status .status-cell.success .status-title {
-    font-size: 15px;
-  }
-
-  .status .status-cell.active {
-    background: #fffde0;
-    width: 135px;
-  }
-
-  .status .status-title {
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 23px;
-  }
-
-  .status .status-image {
-    vertical-align: text-bottom;
-  }
-
-  .body .body-padded,
-  .body .body-padding {
-    padding-top: 34px;
-  }
-
-  .body .body-padding {
-    width: 41px;
-  }
-
-  .body-padded,
-  .body-title {
-    text-align: left;
-  }
-
-  .body .body-title {
-    font-weight: bold;
-    font-size: 17px;
-    color: #464646;
-  }
-
-  .body .body-text .body-text-cell {
-    text-align: left;
-    font-size: 14px;
-    line-height: 1.6;
-    padding: 9px 0 17px;
-  }
-
-  .body .body-text-cell a {
-    color: #464646;
-    text-decoration: underline;
-  }
-
-  .body .body-signature-block .body-signature-cell {
-    padding: 25px 0 30px;
-    text-align: left;
-  }
-
-  .body .body-signature {
-    font-family: "Comic Sans MS", Textile, cursive;
-    font-weight: bold;
-  }
-
-  .footer-wrap {
-    width: 100%;
-    margin: 0 auto;
-    clear: both !important;
-    background-color: #e5e5e5;
-    border-top: 1px solid #b3b3b3;
-    font-size: 12px;
-    color: #656565;
-    line-height: 30px;
-  }
-
-  .footer-wrap .container {
-    padding: 14px 0;
-  }
-
-  .footer-wrap .container .content {
-    padding: 0;
-  }
-
-  .footer-wrap .container .footer-lead {
-    font-size: 14px;
-  }
-
-  .footer-wrap .container .footer-lead a {
-    font-size: 14px;
-    font-weight: bold;
-    color: #535353;
-  }
-
-  .footer-wrap .container a {
-    font-size: 12px;
-    color: #656565;
-  }
-
-  .footer-wrap .container a.last {
-    margin-right: 0;
-  }
-
-  .footer-wrap .footer-group {
-    display: inline-block;
-  }
-
-  .container {
-    display: block !important;
-    max-width: 505px !important;
-    clear: both !important;
-  }
-
-  .content {
-    padding: 0;
-    max-width: 505px;
-    margin: 0 auto;
-    display: block;
-  }
-
-  .content table {
-    width: 100%;
-  }
-
-
-  .clear {
-    display: block;
-    clear: both;
-  }
-
-  table.full-width-gmail-android {
-    width: 100% !important;
-  }
-
-  </style>
-
-  <style type="text/css" media="only screen">
-
-  @media only screen {
-
-    table[class*="head-wrap"],
-    table[class*="body-wrap"],
-    table[class*="footer-wrap"] {
+  <head>
+    <title>Recuperar Senha - HCODE</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 " />
+    <meta name="format-detection" content="telephone=no" />
+    <!--[if !mso]><!-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <!--<![endif]-->
+    <style type="text/css">
+      body {
+      -webkit-text-size-adjust: 100% !important;
+      -ms-text-size-adjust: 100% !important;
+      -webkit-font-smoothing: antialiased !important;
+      }
+      img {
+      border: 0 !important;
+      outline: none !important;
+      }
+      p {
+      Margin: 0px !important;
+      Padding: 0px !important;
+      }
+      table {
+      border-collapse: collapse;
+      mso-table-lspace: 0px;
+      mso-table-rspace: 0px;
+      }
+      td, a, span {
+      border-collapse: collapse;
+      mso-line-height-rule: exactly;
+      }
+      .ExternalClass * {
+      line-height: 100%;
+      }
+      span.MsoHyperlink {
+      mso-style-priority:99;
+      color:inherit;}
+      span.MsoHyperlinkFollowed {
+      mso-style-priority:99;
+      color:inherit;}
+      </style>
+      <style media="only screen and (min-width:481px) and (max-width:599px)" type="text/css">
+      @media only screen and (min-width:481px) and (max-width:599px) {
+      table[class=em_main_table] {
       width: 100% !important;
-    }
-
-    td[class*="container"] {
-      margin: 0 auto !important;
-    }
-
-  }
-
-  @media only screen and (max-width: 505px) {
-
-    *[class*="w320"] {
-      width: 320px !important;
-    }
-
-    table[class="soapbox"] td[class*="soapbox-title"],
-    table[class="body"] td[class*="body-padded"] {
-      padding-top: 24px;
-    }
-  }
-  </style>
-</head>
-
-<body bgcolor="#ffffff">
-
-  <div align="center">
-    <table class="head-wrap w320 full-width-gmail-android" bgcolor="#f9f8f8" cellpadding="0" cellspacing="0" border="0">
+      }
+      table[class=em_wrapper] {
+      width: 100% !important;
+      }
+      td[class=em_hide], br[class=em_hide] {
+      display: none !important;
+      }
+      td[class=em_align_cent] {
+      text-align: center !important;
+      }
+      td[class=em_aside]{
+      padding-left:10px !important;
+      padding-right:10px !important;
+      }
+      td[class=em_height]{
+      height: 20px !important;
+      }
+      td[class=em_font]{
+      font-size:14px !important;	
+      }
+      td[class=em_align_cent1] {
+      text-align: center !important;
+      padding-bottom: 10px !important;
+      }
+      }
+      </style>
+      <style media="only screen and (max-width:480px)" type="text/css">
+      @media only screen and (max-width:480px) {
+      table[class=em_main_table] {
+      width: 100% !important;
+      }
+      table[class=em_wrapper] {
+      width: 100% !important;
+      }
+      td[class=em_hide], br[class=em_hide], span[class=em_hide] {
+      display: none !important;
+      }
+      td[class=em_align_cent] {
+      text-align: center !important;
+      }
+      td[class=em_height]{
+      height: 20px !important;
+      }
+      td[class=em_aside]{
+      padding-left:10px !important;
+      padding-right:10px !important;
+      } 
+      td[class=em_font]{
+      font-size:14px !important;
+      line-height:28px !important;
+      }
+      span[class=em_br]{
+      display:block !important;
+      }
+      td[class=em_align_cent1] {
+      text-align: center !important;
+      padding-bottom: 10px !important;
+      }
+      }
+    </style>
+  </head>
+  <body style="margin:0px; padding:0px;" bgcolor="#ffffff">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+       <!-- === PRE HEADER SECTION=== -->  
       <tr>
-        <td background="https://www.filepicker.io/api/file/UOesoVZTFObSHCgUDygC" bgcolor="#ffffff" width="100%" height="8" valign="top">
-          <!--[if gte mso 9]>
-          <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;height:8px;">
-            <v:fill type="tile" src="https://www.filepicker.io/api/file/UOesoVZTFObSHCgUDygC" color="#ffffff" />
-            <v:textbox inset="0,0,0,0">
-          <![endif]-->
-          <div height="8">
-          </div>
-          <!--[if gte mso 9]>
-            </v:textbox>
-          </v:rect>
-          <![endif]-->
+        <td align="center" valign="top"  bgcolor="#30373b">
+          <table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="em_main_table" style="table-layout:fixed;">
+            <tr>
+              <td style="line-height:0px; font-size:0px;" width="600" class="em_hide" bgcolor="#30373b"><img src="https://www.sendwithus.com/assets/img/emailmonks/images/spacer.gif" height="1"  width="600" style="max-height:1px; min-height:1px; display:block; width:600px; min-width:600px;" border="0" alt="" /></td>
+            </tr>
+            <tr>
+              <td valign="top">
+                <table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="em_wrapper">
+                  <tr>
+                    <td height="10" class="em_height" style="font-size:1px; line-height:1px;">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td height="10" class="em_height" style="font-size:1px; line-height:1px;">&nbsp;</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
         </td>
       </tr>
-      <tr class="header-background">
-        <td class="header container" align="center">
-          <div class="content">
-            <span class="brand">
-              <a href="#">
-                Hcode Store
-              </a>
-            </span>
-          </div>
-        </td>
-      </tr>
-    </table>
-
-    <table class="body-wrap w320">
+      <!-- === //PRE HEADER SECTION=== -->  
+      <!-- === BODY === -->  
       <tr>
-        <td></td>
-        <td class="container">
-          <div class="content">
-            <table cellspacing="0">
-              <tr>
-                <td>
-                  <table class="soapbox">
-                    <tr>
-                      <td class="soapbox-title">Recuperação de Senha</td>
-                    </tr>
-                  </table>
-                  <table class="body">
-                    <tr>
-                      <td class="body-padding"></td>
-                      <td class="body-padded">
-                        <div class="body-title">Olá <?php echo htmlspecialchars( $name, ENT_COMPAT, 'UTF-8', FALSE ); ?>,</div>
-                        <table class="body-text">
-                          <tr>
-                            <td class="body-text-cell">
-                              Para redefinir a sua senha acesse o link <a href="<?php echo htmlspecialchars( $link, ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $link, ENT_COMPAT, 'UTF-8', FALSE ); ?></a>.
-                            </td>
-                          </tr>
-                        </table>
-                        <div><!--[if mso]>
-                          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#" style="height:38px;v-text-anchor:middle;width:230px;" arcsize="11%" strokecolor="#407429" fill="t">
-                            <v:fill type="tile" src="https://www.filepicker.io/api/file/N8GiNGsmT6mK6ORk00S7" color="#41CC00" />
-                            <w:anchorlock/>
-                            <center style="color:#ffffff;font-family:sans-serif;font-size:17px;font-weight:bold;">Review Account Settings</center>
-                          </v:roundrect>
-                        <![endif]--><a href="<?php echo htmlspecialchars( $link, ENT_COMPAT, 'UTF-8', FALSE ); ?>"
-                        style="background-color:#41CC00;background-image:url(https://www.filepicker.io/api/file/N8GiNGsmT6mK6ORk00S7);border:1px solid #407429;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:17px;font-weight:bold;text-shadow: -1px -1px #47A54B;line-height:38px;text-align:center;text-decoration:none;width:230px;-webkit-text-size-adjust:none;mso-hide:all;">Redefinir Senha</a></div>
-                        <table class="body-signature-block">
-                          <tr>
-                            <td class="body-signature-cell">
-                              <p>Obrigado!</p>
-                              <p class="body-signature"><img src="https://www.filepicker.io/api/file/2R9HpqboTPaB4NyF35xt" alt="Company Name"></p>
-                            </td>
-                          </tr>
-                        </table>
-                      </td>
-                      <td class="body-padding"></td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-            </table>
-          </div>
+        <td align="center" valign="top"  bgcolor="#ffffff">
+          <table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="em_main_table" style="table-layout:fixed;">
+            <!-- === LOGO SECTION === -->
+            <tr>
+              <td height="40" class="em_height">&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="center"><a href="http://www.hcodecommerce.com.br" target="_blank" style="text-decoration:none;"><img src="https://image.ibb.co/c61qkq/logo.png" width="230" height="80" style="display:block;font-family: Arial, sans-serif; font-size:15px; line-height:18px; color:#30373b;  font-weight:bold;" border="0" alt="Logo hcode" /></a></td>
+            </tr>
+            <tr>
+              <td height="30" class="em_height">&nbsp;</td>
+            </tr>
+            <!-- === //LOGO SECTION === -->
+            <!-- === NEVIGATION SECTION === -->
+            <tr>
+              <td height="1" bgcolor="#fed69c" style="font-size:0px; line-height:0px;"><img src="https://www.sendwithus.com/assets/img/emailmonks/images/spacer.gif" width="1" height="1" style="display:block;" border="0" alt="" /></td>
+            </tr>
+            <tr>
+              <td height="14" style="font-size:1px; line-height:1px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="center" style="font-family:'Open Sans', Arial, sans-serif; font-size:15px; line-height:18px; color:#30373b; text-transform:uppercase; font-weight:bold;" class="em_font">
+                <a href="http://www.hcodecommerce.com.br" target="_blank" style="text-decoration:none; color:#30373b;">home</a> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.hcodecommerce.com.br/products" target="_blank" style="text-decoration:none; color:#30373b;">produtos</a><span class="em_hide"> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="em_br"></span><a href="http://www.hcodecommerce.com.br/cart" target="_blank" style="text-decoration:none; color:#30373b;">carrinho</a> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.hcodecommerce.com.br/profile" target="_blank" style="text-decoration:none; color:#30373b;">minha conta</a>
+              </td>
+            </tr>
+            <tr>
+              <td height="14" style="font-size:1px; line-height:1px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td height="1" bgcolor="#fed69c" style="font-size:0px; line-height:0px;"><img src="https://www.sendwithus.com/assets/img/emailmonks/images/spacer.gif" width="1" height="1" style="display:block;" border="0" alt="" /></td>
+            </tr>
+            <!-- === //NEVIGATION SECTION === -->
+            <!-- === IMG WITH TEXT AND CTA === -->
+            <tr>
+              <td valign="top" class="em_aside">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="25" class="em_height">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td valign="middle" align="center"><img src="https://www.sendwithus.com/assets/img/emailmonks/images/img1.png" width="150" height="149" alt="" style="display:block; font-family:Arial, sans-serif; font-size:25px; line-height:149px; color:#c27cbb;"  border="0" /></td>
+                  </tr>
+                  <tr>
+                    <td height="25" class="em_height">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td align="center">
+                      <img src="https://www.sendwithus.com/assets/img/emailmonks/images/update.png" width="172" height="35" style="display:block;font-family:'FISHfingers', Tahoma, Geneva, sans-serif; font-size:40px; line-height:42px; color:#feae39; text-transform:uppercase; letter-spacing:5px;" border="0" alt="UPDATE" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td height="25" style="font-size:1px; line-height:1px;">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td height="1" bgcolor="#d8e4f0" style="font-size:0px;line-height:0px;"><img src="https://www.sendwithus.com/assets/img/emailmonks/images/spacer.gif" width="1" height="1" alt="" style="display:block;" border="0" /></td>
+                  </tr>
+                  <tr>
+                    <td height="34" style="font-size:1px; line-height:1px;">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td align="center" style="font-family:'Open Sans', Arial, sans-serif; font-size:18px; font-weight:bold; line-height:20px; color:#feae39;"><?php echo htmlspecialchars( $name, ENT_COMPAT, 'UTF-8', FALSE ); ?> acesse o link para redefinir a senha.</td>
+                  </tr>
+                  <tr>
+                    <td height="20" style="font-size:1px; line-height:1px;">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td align="center" style="font-family:'Open Sans', Arial, sans-serif; font-size:16px; line-height:20px; color:#feae39;">Dúvidas? Contate o <a href="#" target="_blank" style="text-decoration:underline; color:#feae39;">nosso suporte.</a></td>
+                  </tr>
+                  <tr>
+                    <td height="15" style="font-size:1px; line-height:1px;">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td valign="top" align="center">
+                      <table width="210" border="0" cellspacing="0" cellpadding="0" align="center">
+                        <tr>
+                          <td valign="middle" align="center" height="45" bgcolor="#feae39" style="font-family:'Open Sans', Arial, sans-serif; font-size:17px; font-weight:bold; color:#ffffff; text-transform:uppercase;"><a href="<?php echo htmlspecialchars( $link, ENT_COMPAT, 'UTF-8', FALSE ); ?>" target="_blank" style="text-decoration:none; color:#ffffff; display:block; line-height:45px;">Redefinir</a></td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td height="34" class="em_height">&nbsp;</td>
+                  </tr>
+                  
+                  <tr>
+                    <td height="31" class="em_height">&nbsp;</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- === //IMG WITH TEXT AND CTA === -->
+          </table>
         </td>
-        <td></td>
       </tr>
-    </table>
-
-    <table class="footer-wrap w320 full-width-gmail-android" bgcolor="#e5e5e5">
+      <!-- === BODY === --> 
+      <!-- === FOOTER SECTION === -->
       <tr>
-        <td></td>
-        <td class="container">
-          <div class="content footer-lead">
-            <a href="#"><b>Get in touch</b></a> if you have any questions or feedback
-          </div>
+        <td align="center" valign="top"  bgcolor="#30373b" class="em_aside">
+          <table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="em_main_table" style="table-layout:fixed;">
+            <tr>
+              <td height="35" class="em_height">&nbsp;</td>
+            </tr>
+            <tr>
+              <td valign="top" align="center">
+                <table border="0" cellspacing="0" cellpadding="0" align="center">
+                  <tr>
+                    <td valign="top"><a href="#" target="_blank" style="text-decoration:none;"><img src="https://www.sendwithus.com/assets/img/emailmonks/images/fb.png" width="26" height="26" style="display:block;font-family: Arial, sans-serif; font-size:10px; line-height:18px; color:#feae39; " border="0" alt="Fb" /></a></td>
+                    <td width="7">&nbsp;</td>
+                    <td valign="top"><a href="#" target="_blank" style="text-decoration:none;"><img src="https://www.sendwithus.com/assets/img/emailmonks/images/tw.png" width="26" height="26" style="display:block;font-family: Arial, sans-serif; font-size:10px; line-height:18px; color:#feae39; " border="0" alt="Tw" /></a></td>
+                    <td width="7">&nbsp;</td>
+                    <td valign="top"><a href="#" target="_blank" style="text-decoration:none;"><img src="https://www.sendwithus.com/assets/img/emailmonks/images/pint.png" width="26" height="26" style="display:block;font-family: Arial, sans-serif; font-size:10px; line-height:18px; color:#feae39; " border="0" alt="pint" /></a></td>
+                    <td width="7">&nbsp;</td>
+                    <td valign="top"><a href="#" target="_blank" style="text-decoration:none;"><img src="https://www.sendwithus.com/assets/img/emailmonks/images/google.png" width="26" height="26" style="display:block;font-family: Arial, sans-serif; font-size:10px; line-height:18px; color:#feae39; " border="0" alt="G+" /></a></td>
+                    <td width="7">&nbsp;</td>
+                    <td valign="top"><a href="#" target="_blank" style="text-decoration:none;"><img src="https://www.sendwithus.com/assets/img/emailmonks/images/insta.png" width="26" height="26" style="display:block;font-family: Arial, sans-serif; font-size:10px; line-height:18px; color:#feae39; " border="0" alt="Insta" /></a></td>
+                    <td width="7">&nbsp;</td>
+                    <td valign="top"><a href="#" target="_blank" style="text-decoration:none;"><img src="https://www.sendwithus.com/assets/img/emailmonks/images/yt.png" width="26" height="26" style="display:block;font-family: Arial, sans-serif; font-size:10px; line-height:18px; color:#feae39; " border="0" alt="Yt" /></a></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td height="22" class="em_height">&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="center" style="font-family:'Open Sans', Arial, sans-serif; font-size:12px; line-height:18px; color:#848789; text-transform:uppercase;">
+               <span style="text-decoration:underline;"><a href="#" target="_blank" style="text-decoration:underline; color:#848789;">POLITICA DE PRIVACIDADE</a></span> &nbsp;&nbsp;|&nbsp;&nbsp; <span style="text-decoration:underline;"><a href="#" target="_blank" style="text-decoration:underline; color:#848789;">TERMOS DE SERVIÇO</a></span>
+              </td>
+            </tr>
+            <tr>
+              <td height="10" style="font-size:1px; line-height:1px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="center" style="font-family:'Open Sans', Arial, sans-serif; font-size:12px; line-height:18px; color:#848789;text-transform:uppercase;">
+                &copy;&zwnj;<date id="date"></date> Hcode Store. Todos os direitos reservados.
+              </td>
+            </tr>
+            <tr>
+              <td height="10" style="font-size:1px; line-height:1px;">&nbsp;</td>
+            </tr>
+            
+            <tr>
+              <td height="35" class="em_height">&nbsp;</td>
+            </tr>
+          </table>
         </td>
-        <td></td>
       </tr>
+      <!-- === //FOOTER SECTION === -->
     </table>
-    <table class="footer-wrap w320 full-width-gmail-android" bgcolor="#e5e5e5">
-      <tr>
-        <td></td>
-        <td class="container">
-          <div class="content">
-            <a href="#">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-            <span class="footer-group">
-              <a href="#">Facebook</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-              <a href="#">Twitter</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-              <a href="#">Support</a>
-            </span>
-          </div>
-        </td>
-        <td></td>
-      </tr>
-    </table>
-  </div>
+    <div style="display:none; white-space:nowrap; font:20px courier; color:#ffffff; background-color:#ffffff;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+    <script>
+    
+      var now = new Date();
 
-</body>
+      var date = document.getElementById("date");
+
+      date.append(now.getFullYear());
+
+    </script>
+  </body>
 </html>
